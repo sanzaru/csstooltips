@@ -1,5 +1,5 @@
 # CSS Tooltips
-CSS Tooltips is a simple CSS / SASS library to create CSS3 tooltips without any Javascript included. 
+CSS Tooltips is a small (~1.775 kb) and simple CSS / SASS library to create CSS3 tooltips without any Javascript included. 
 
 *Demo:* http://sanzaru.github.io/csstooltips/#demo
 
