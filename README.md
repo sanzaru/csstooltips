@@ -3,6 +3,9 @@ CSS Tooltips is a small (~1.7kb) and simple CSS / SASS library to create CSS3 to
 
 *Demo:* http://sanzaru.github.io/csstooltips/#demo
 
+*Screenshot:*
+[screenshot]: https://seriousmonkey.de/cdn/csstooltips/screenshot.png "Screenshot"
+
 ### Supported browsers:
 * Internet Explorer >= 9
 * Firefox >= 36
