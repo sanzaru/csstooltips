@@ -293,10 +293,10 @@ hr {
 #totop {
   position: fixed;
   padding: 10px;
-  background: green;
+  background: lightslategrey;
   border-radius: 50%;
-  right: 20px;
-  bottom: 20px;
+  right: 30px;
+  bottom: 30px;
   color: #fff;
   text-decoration: none;
 
