@@ -6,8 +6,8 @@
  * Copyright (c) 2015 Martin Albrecht
  *
  */
-$cssttp-background: #FFFFC5;
-$cssttp-transition-time: .4s;
+@import 'vars';
+@import 'animation';
 
 .cssttp {
   position: relative;
@@ -19,12 +19,9 @@ $cssttp-transition-time: .4s;
   }
 
   &.fade-in:hover > .cssttp-content {
-    transition: opacity $cssttp-transition-time;
-    -webkit-transition: opacity $cssttp-transition-time;
-    -moz-transition: opacity $cssttp-transition-time;
-    -o-transition: opacity $cssttp-transition-time;
+    @include transition(opacity, $cssttp-transition-time);
   }
-  
+
   /*
    * Default tooltip
    */
@@ -43,6 +40,7 @@ $cssttp-transition-time: .4s;
     box-sizing: border-box;
     color: initial;
     font-weight: initial;
+    border-radius: 5px;
     
     &:before {
       position: absolute;      

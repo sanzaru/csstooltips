@@ -1,0 +1,16 @@
+/*
+ *
+ * CSS Tooltips - https://github.com/sanzaru
+ *
+ * Licensed under the MIT license - http://opensource.org/licenses/MIT
+ * Copyright (c) 2015 Martin Albrecht
+ *
+ */
+@import 'vars';
+
+@mixin transition($what, $time, $type:"") {
+	transition: $what $time #{$type};
+	-webkit-transition: $what $time #{$type};
+	-moz-transition: $what $time #{$type};
+	-o-transition: $what $time #{$type};
+}
