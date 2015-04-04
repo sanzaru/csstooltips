@@ -1,5 +1,12 @@
-# csstooltips
-CSS Tooltip library
+# CSS Tooltips
+CSS Tooltips is a simple CSS / SASS library to create CSS3 tooltips without any Javascript included. 
+
+*Demo:* http://sanzaru.github.io/csstooltips/#demo
+
+### Supported browsers:
+* Internet Explorer >= 9
+* Firefox >= 36
+* Chrome >= 41
 
 ### Possible classes:
 <dl>
