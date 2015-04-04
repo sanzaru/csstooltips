@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>CSS Tooltips examples</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="csstooltips.css">
+	<style>
+		body {
+			background: #ccc;
+		}
+		.example {
+			background: #fff;
+			border: 1px solid #000;
+			padding: 10px;
+			border-radius: 5px;				
+			display: inline-block;
+		}
+		.textinfo {
+			font-weight: bold;
+			border-bottom: 1px dotted #000;
+		}
+	</style>
+</head>
+<body>	
+	<h1>Simple tooltip</h1>
+	<span class="cssttp fade-in example">
+		<span>Simple tooltip example</span>
+		<div class="cssttp-content">
+			<i class="fa fa-info-circle"></i> Hello, I'm a simple tooltip!
+		</div>
+	</span>
+	<br>
+
+	<h1>Right tooltip</h1>
+	<div class="cssttp fade-in right example">
+		<span>Simple tooltip example</span>
+		<div class="cssttp-content">
+			<i class="fa fa-info-circle"></i> Hello, I'm a right tooltip!
+		</div>
+	</div>	
+
+	<h1>Left tooltip</h1>
+	<div class="cssttp fade-in left example" style="margin-left: 250px;">
+		<span>Simple tooltip example</span>
+		<div class="cssttp-content">
+			<i class="fa fa-info-circle"></i> Hello, I'm a left tooltip!
+		</div>
+	</div>
+
+	<h1>Top tooltip</h1>
+	<div class="cssttp fade-in top example">
+		<span>Simple tooltip example</span>
+		<div class="cssttp-content">
+			<i class="fa fa-info-circle"></i> Hello, I'm a top tooltip!
+		</div>
+	</div>
+
+	<h1>Inside Text</h1>
+	<p>
+	Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et <span class="cssttp help textinfo">accusam<span class="cssttp-content">Help 01</span></span> et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna <span class="cssttp help textinfo">aliquyam<span class="cssttp-content">Help 02</span></span> erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur <span class="cssttp help textinfo">sadipscing<span class="cssttp-content">Help 03</span></span> elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+	</p>
+
+	<h1>Simple link</h1>
+	<a href="#" class="cssttp fade-in help right">
+		Link
+		<div class="cssttp-content">
+			<i class="fa fa-info-circle"></i> Hello, I'm a link tooltip!
+		</div>
+	</a>
+</body>
+</html>

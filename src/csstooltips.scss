@@ -1,0 +1,134 @@
+/*
+ *
+ * CSS Tooltips - https://github.com/sanzaru
+ *
+ * Licensed under the MIT license - http://opensource.org/licenses/MIT
+ * Copyright (c) 2015 Martin Albrecht
+ *
+ */
+$cssttp-background: #FFFFC5;
+$cssttp-transition-time: .4s;
+
+.cssttp {
+  position: relative;
+  cursor: default;
+  display: inline-block;
+
+  &.help {
+    cursor: help;
+  }
+
+  &.fade-in:hover > .cssttp-content {
+    transition: opacity $cssttp-transition-time;
+    -webkit-transition: opacity $cssttp-transition-time;
+    -moz-transition: opacity $cssttp-transition-time;
+    -o-transition: opacity $cssttp-transition-time;
+  }
+  
+  /*
+   * Default tooltip
+   */
+  & > .cssttp-content {
+    position: absolute;
+    display: inline-table;
+    left: 0;
+    right: 0;
+    top: calc(100% + 7px);
+    padding: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    background: $cssttp-background;
+    opacity: 0;    
+    white-space: nowrap;
+    z-index: 9999999;
+    box-sizing: border-box;
+    color: initial;
+    font-weight: initial;
+    
+    &:before {
+      position: absolute;      
+      top: -5px;
+      left: calc(50% - 5px);
+      right: 0;
+      width: 0;
+      display: block;
+      content: ' ';
+      border-left: 5px solid transparent;
+    	border-right: 5px solid transparent;
+      border-bottom: 5px solid $cssttp-background;
+      box-sizing: border-box;
+    }
+  }  
+
+  &:hover > .cssttp-content {    
+    height: auto;
+    overflow: initial;    
+    opacity: 1;
+  }
+
+
+  /*
+   * Right Tooltip
+   */
+  &.right > .cssttp-content {
+    &:before {
+      left: -10px;
+      top: calc(50% - 5px);
+      bottom: auto;
+      border-top: 5px solid transparent;      
+      border-bottom: 5px solid transparent;
+      border-right: 5px solid $cssttp-background;
+    }
+  }
+
+  &.right:hover > .cssttp-content {
+    left: 100%;
+    right: 0;
+    top: calc(50% - 10px);
+    bottom: auto;
+    margin-left: 10px;
+    margin-top: -5px;
+  } 
+
+
+  /*
+   * left Tooltip
+   */
+  &.left > .cssttp-content {
+    &:before {
+      right: -10px;
+      left: auto;
+      top: calc(50% - 5px);
+      bottom: auto;
+      border-top: 5px solid transparent;      
+      border-bottom: 5px solid transparent;
+      border-left: 5px solid $cssttp-background;
+    }
+  }
+
+  &.left:hover > .cssttp-content {
+    left: calc(-100% - 20px);
+    top: 0;
+    bottom: 0;
+  } 
+
+
+  /*
+   * Top Tooltip
+   */
+  &.top > .cssttp-content {
+    &:before {
+      top: 100%;
+      border-bottom: 0 none;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 5px solid $cssttp-background;            
+    }
+  }
+
+  &.top:hover > .cssttp-content {
+    top: -100%;
+    left: 0;
+    right: auto;
+    bottom: auto;
+  }  
+}
