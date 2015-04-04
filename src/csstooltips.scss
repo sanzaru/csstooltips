@@ -106,7 +106,8 @@ $cssttp-transition-time: .4s;
   }
 
   &.left:hover > .cssttp-content {
-    left: calc(-100% - 20px);
+    left: auto;
+    right: calc(100% + 10px);
     top: 0;
     bottom: 0;
   } 
