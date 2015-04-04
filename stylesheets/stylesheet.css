@@ -243,3 +243,66 @@ a {
 @media screen and (max-width: 42em) {
   .site-footer {
     font-size: 0.9rem; } }
+
+
+
+
+
+hr {
+  margin: 0 auto;
+  max-width: 80%;
+}
+#demo .example {
+  background: #fff;
+  border: 1px solid #000;
+  padding: 10px;
+  border-radius: 5px;       
+  display: inline-block;
+}
+#demo .textinfo {
+  font-weight: bold;
+  border-bottom: 1px dotted #000;
+}
+#demo .code {
+  background: #ccc; 
+  max-width: 80%; 
+  margin: 0 auto; 
+  padding: 0.8rem; 
+  color: #567482; 
+  background-color: #f3f6fa; 
+  border: solid 1px #dce6f0;
+}
+
+#navigation a {
+  display: inline-block;
+  border: solid 1px #dce6f0;
+  border-radius: 5px;
+  padding: 5px;
+  transition: background .3s;
+  -webkit-transition: background .3s;
+  -moz-transition: background .3s;
+  -o-transition: background .3s;
+  margin-right: 10px;
+}
+
+#navigation a:hover {
+  background: #f3f6fa;
+  text-decoration: none;
+}
+
+#totop {
+  position: fixed;
+  padding: 10px;
+  background: green;
+  border-radius: 50%;
+  right: 20px;
+  bottom: 20px;
+  color: #fff;
+  text-decoration: none;
+
+  transition: visibility .3s;
+  -webkit-transition: visibility .3s;
+  -moz-transition: visibility .3s;
+  -o-transition: visibility .3s;
+  visibility: hidden;
+}
