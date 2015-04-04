@@ -18,34 +18,39 @@
     cursor: help;
   }
 
-  &.fade-in:hover > .cssttp-content {
-    @include transition(opacity, $cssttp-transition-time);
-  }
-
   /*
    * Default tooltip
    */
   & > .cssttp-content {
-    position: absolute;
-    display: inline-table;
+    position: absolute;    
     left: 0;
     right: 0;
     top: calc(100% + 7px);
+
+    display: inline-block; // Fallback
+    display: inline-table;
     padding: 5px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     background: $cssttp-background;
-    opacity: 0;    
+    
+    max-width: 100%;
     white-space: nowrap;
     z-index: 9999999;
+
     box-sizing: border-box;
+    border-radius: 5px;
+    
     color: initial;
     font-weight: initial;
-    border-radius: 5px;
+    
+    height: 0;
+    opacity: 0; 
+    visibility: hidden;
     
     &:before {
       position: absolute;      
       top: -5px;
-      left: calc(50% - 5px);
+      left: 15px;
       right: 0;
       width: 0;
       display: block;
@@ -57,12 +62,16 @@
     }
   }  
 
+  &.fade-in:hover > .cssttp-content {
+    @include transition(opacity, $cssttp-transition-time);    
+  }
+
   &:hover > .cssttp-content {    
     height: auto;
     overflow: initial;    
     opacity: 1;
-  }
-
+    visibility: visible;
+  }  
 
   /*
    * Right Tooltip
