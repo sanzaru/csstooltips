@@ -41,7 +41,9 @@
     box-sizing: border-box;
     border-radius: 5px;
     
+    color: #000; // Fallback
     color: initial;
+    font-weight: normal; // Fallback
     font-weight: initial;
     
     height: 0;
@@ -114,7 +116,7 @@
   }
 
   &.left:hover > .cssttp-content {
-    left: auto;
+    left: calc(-100% + 5px);
     right: calc(100% + 10px);
     top: calc(50% - 15px);
   } 
@@ -134,9 +136,8 @@
   }
 
   &.top:hover > .cssttp-content {
-    top: -100%;
+    top: calc(-1em - 15px);
     left: 0;
     right: auto;
-    bottom: auto;
   }  
 }
