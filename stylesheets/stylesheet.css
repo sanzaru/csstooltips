@@ -277,7 +277,7 @@ hr {
   display: inline-block;
   border: solid 1px #dce6f0;
   border-radius: 5px;
-  padding: 5px;
+  padding: 5px 10px;
   transition: background .3s;
   -webkit-transition: background .3s;
   -moz-transition: background .3s;
@@ -292,7 +292,7 @@ hr {
 
 #totop {
   position: fixed;
-  padding: 10px;
+  padding: 6px 10px;
   background: lightslategrey;
   border-radius: 50%;
   right: 30px;
