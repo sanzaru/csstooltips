@@ -6,9 +6,54 @@
  * Copyright (c) 2015 Martin Albrecht
  *
  */
- 
+
 @import 'vars';
 @import 'animation';
+
+// Corners for our tooltip
+@mixin getCorner($direction:bottom) {
+  @if $direction == "bottom" {
+    position: absolute;
+    top: -5px;
+    left: 15px;
+    right: 0;
+    width: 0;
+    display: block;
+    content: ' ';
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid $cssttp-background;
+    box-sizing: border-box;
+  }
+
+  @if $direction == "right" {
+    left: -10px;
+    top: 10px;
+    bottom: auto;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 5px solid $cssttp-background;
+  }
+
+  @if $direction == "left" {
+    right: -10px;
+    left: auto;
+    top: 10px;
+    bottom: auto;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid $cssttp-background;
+  }
+
+  @if $direction == "top" {
+    top: 100%;
+    border-bottom: 0 none;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid $cssttp-background;
+  }
+}
+
 
 .cssttp {
   position: relative;
@@ -20,73 +65,57 @@
   }
 
   /*
-   * Default tooltip
+   * Default tooltip (bottom)
    */
-  & > .cssttp-content {
-    position: absolute;    
+  & > .cssttp-content,
+  &.bottom > .cssttp-content {
+    position: absolute;
     left: 0;
     right: 0;
     top: calc(100% + 7px);
 
-    display: inline-block; // Fallback
     display: inline-table;
     padding: 5px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     background: $cssttp-background;
-    
-    max-width: 100%;
+
     white-space: nowrap;
     z-index: 9999999;
 
     box-sizing: border-box;
     border-radius: 5px;
-    
+
     color: #000; // Fallback
     color: initial;
     font-weight: normal; // Fallback
     font-weight: initial;
-    
-    height: 0;
-    opacity: 0; 
-    visibility: hidden;
-    
-    &:before {
-      position: absolute;      
-      top: -5px;
-      left: 15px;
-      right: 0;
-      width: 0;
-      display: block;
-      content: ' ';
-      border-left: 5px solid transparent;
-    	border-right: 5px solid transparent;
-      border-bottom: 5px solid $cssttp-background;
-      box-sizing: border-box;
-    }
-  }  
 
-  &.fade-in:hover > .cssttp-content {
-    @include transition(opacity, $cssttp-transition-time);    
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+
+    &:not(.nocorner):before {
+      @include getCorner();
+    }
   }
 
-  &:hover > .cssttp-content {    
+  &.fade-in:hover > .cssttp-content {
+    @include transition(opacity, $cssttp-transition-time);
+  }
+
+  &:hover > .cssttp-content {
     height: auto;
-    overflow: initial;    
+    overflow: initial;
     opacity: 1;
     visibility: visible;
-  }  
+  }
 
   /*
    * Right Tooltip
    */
   &.right > .cssttp-content {
-    &:before {
-      left: -10px;
-      top: 10px;
-      bottom: auto;
-      border-top: 5px solid transparent;      
-      border-bottom: 5px solid transparent;
-      border-right: 5px solid $cssttp-background;
+    &:not(.nocorner):before {
+      @include getCorner("right");
     }
   }
 
@@ -97,21 +126,15 @@
     bottom: auto;
     margin-left: 10px;
     margin-top: -5px;
-  } 
+  }
 
 
   /*
    * left Tooltip
    */
   &.left > .cssttp-content {
-    &:before {
-      right: -10px;
-      left: auto;
-      top: 10px;
-      bottom: auto;
-      border-top: 5px solid transparent;      
-      border-bottom: 5px solid transparent;
-      border-left: 5px solid $cssttp-background;
+    &:not(.nocorner):before {
+      @include getCorner("left");
     }
   }
 
@@ -119,19 +142,15 @@
     left: calc(-100% + 5px);
     right: calc(100% + 10px);
     top: calc(50% - 15px);
-  } 
+  }
 
 
   /*
    * Top Tooltip
    */
   &.top > .cssttp-content {
-    &:before {
-      top: 100%;
-      border-bottom: 0 none;
-      border-left: 5px solid transparent;
-      border-right: 5px solid transparent;
-      border-top: 5px solid $cssttp-background;            
+    &:not(.nocorner):before {
+      @include getCorner("top");
     }
   }
 
@@ -139,5 +158,5 @@
     top: calc(-1em - 15px);
     left: 0;
     right: auto;
-  }  
+  }
 }

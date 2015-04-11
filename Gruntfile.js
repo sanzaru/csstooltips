@@ -12,12 +12,12 @@ module.exports = function(grunt) {
             specify: 'src/*'
           }
       },
-    }, 
+    },
 
     watch: {
       compass: {
         files: ['src/*.scss'],
-        tasks: ['compass']        
+        tasks: ['compass']
       },
     },
   });
