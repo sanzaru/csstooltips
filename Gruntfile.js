@@ -5,7 +5,7 @@ module.exports = function(grunt) {
     compass: {
       dist: {
           options: {
-            //banner: '/* <%= pkg.name %> v<%= pkg.version %> - <%= pkg.url %> */',
+            banner: '/* <%= pkg.name %> v<%= pkg.version %> - <%= pkg.url %> */',
             sassDir: 'src/',
             cssDir: './',
             outputStyle: 'compressed',
