@@ -2,9 +2,10 @@
   "name": "CSS-Tooltips",
   "version": "0.1.1",
   "url": "https://github.com/sanzaru/csstooltips",
-  "devDependencies": {
-    "grunt": "^1.4.0",
-    "grunt-contrib-compass": "~*",
-    "grunt-contrib-watch": "~*"
+  "scripts": {
+    "build": "node-sass --output-style compressed src/csstooltips.scss > csstooltips.css"
+  },
+  "dependencies": {
+    "node-sass": "^6.0.1"
   }
 }
