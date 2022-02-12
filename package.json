@@ -6,6 +6,6 @@
     "build": "node-sass --output-style compressed src/csstooltips.scss > csstooltips.css"
   },
   "dependencies": {
-    "node-sass": "^6.0.1"
+    "node-sass": "^7.0.0"
   }
 }
